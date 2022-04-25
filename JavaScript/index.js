@@ -274,3 +274,71 @@ switch (grade) {
     //     console.log(i)
     // }
 
+// functions - define code once use it severally, call the functions name
+// global variables - declared outside of functions or any curly braces
+// variables declared with let are only accessible within the immediate set of curly braces
+// return - returns a value to the place you invoked a function
+    // startProg()
+    // function startProg(){
+    //     let fname = "`XXXX`";
+    //     let age = 23;
+
+    //     happyBirthday(fname, age)
+    // }    
+    // function happyBirthday(fname, age) {
+    //     console.log("Happy birthday to you");
+    //     console.log("Happy birthday to you");
+    //     console.log("Happy birthday dear", fname);
+    //     console.log("Happy birthday to you");
+    //     console.log("You are", age, "years old");
+    // }
+
+// ternary operator - shortcut for if else statement
+    // - 1, a condition with?
+    // - 2, expression if True :
+    // - 3, expression if False
+    // condition? True: False
+
+    // let adult = checkAdult(38);
+    // console.log(adult)
+    // function checkAdult(age) {
+    //     return age >= 18 ? true : false
+    // }
+
+    // checkWinner(false)
+    // function checkWinner(win) {
+    //     win ? console.log("you win!"): console.log("you loose!");
+    // }
+
+// var && let
+// variable scope is where the variable is accessible
+// let - are limited to a block scope {} cant be accessed outside the immediate {}
+// var - can accessed outside a block scope {} but cant escape a function thus are limited to a function({})
+// global variable = is declared outside any function, entire program can access it
+// (if you declare a global var with var, it will be problematic as it will change browser's window properties)
+// e.g our window object has a property called name so var name would change it while let wont
+
+// template literals - (``) back ticks
+let un = "LyonsX";
+let price = 3500;
+let txt = `Hello ${un}, please pay kshs.${price}`
+// console.log(`Hello ${un}, please pay kshs.${price}`)
+document.getElementById("literal").textContent = txt
+
+// toLocaleString() - returns a string with a language sensitive representation of this number
+// number.toLocaleString(locale, {options}) - locale-specify language(undefined - default set by browser), options- formatting options
+
+    let myNum = 123456.789;
+    let myNum2 = .789;
+    let myNum3 = 12.789;
+    // myNum = myNum.toLocaleString("en-US") //us english
+    // myNum = myNum.toLocaleString("hi-HI") //hindi
+    // myNum = myNum.toLocaleString("en-US", {style: "currency", currency: "USD"} )
+    myNum = myNum.toLocaleString("hi-HI", {style: "currency", currency: "INR"} )
+    myNum2 = myNum2.toLocaleString(undefined, {style: "percent"})
+    myNum3 = myNum3.toLocaleString(undefined, {style: "unit", unit:"celsius"})
+    console.log(myNum)
+    console.log(myNum2)
+    console.log(myNum3)
+
+
