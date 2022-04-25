@@ -2,7 +2,7 @@ console.log('This is it')
 
 // window.alert("I like pizza")
 
-// variables
+// variables 
 // declaration - let,var,const
 // assignment - (=assignment operator)
 let age = 20; //numbers
