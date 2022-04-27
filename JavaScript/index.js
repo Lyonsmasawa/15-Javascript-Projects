@@ -341,4 +341,30 @@ document.getElementById("literal").textContent = txt
     console.log(myNum2)
     console.log(myNum3)
 
+// guess
+const ans = Math.floor(Math.random() * 10 + 1);
+console.log(ans)
+let guesses = 0;
+let guessr = document.getElementById("guessr");
+document.getElementById("guessfield").onclick = () => {
+    let guess = document.getElementById("guessfield").value;
+    guesses ++;
 
+    if (guess == ans) {
+       guessr.textContent = `You got it in ${guesses} guesses'!`;
+    }else if(guess < ans){
+        guessr.textContent = `Try higher`;
+    }else{
+        guessr.textContent = `try lower`;
+    }
+}
+
+// temp conversion
+let temp = 32;
+
+function toCelsius(temp) {
+    return (temp-32) * (5/9);
+}
+function toCelsius(temp) {
+    return (temp-32) * (5/9);
+}
