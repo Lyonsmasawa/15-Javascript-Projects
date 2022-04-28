@@ -556,3 +556,278 @@ console.log('This is it')
     greeting()
 
 // arrow functions
+    // if no arguments you just need a set of parenthesis
+    let sm = () => {
+        console.log("arrows")
+    }
+    sm()
+    // if you have one argument no need of braces
+    let smz = uname => console.log(uname + ": 12") 
+    smz(uname)
+    // if you have more than one argument you need braces
+    let smzx = (uname, age) => {
+        console.log(uname + age)
+    }
+    smzx(uname, age)
+    //  If the function has only one statement, and the statement returns a value,
+    //  you can remove the curly brackets and the return keyword
+    hello = () => "Hello World!"; 
+
+// shuffle arrays
+    let cards = ["A", "1", "2","3","4","5","6","7","8","9","J","Q","K"]
+    shuffle(cards) 
+    console.log(cards)
+    function shuffle(array) {
+        let currentIndex = array.length;
+
+        while (currentIndex != 0) {
+            let randomIndex = Math.floor(Math.random() * array.length)
+            currentIndex -= 1;
+
+            let temp = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temp
+        }
+        return array;
+    }
+
+// nested function - functions inside other functions. outer func have access to inner func but inner func are hidden to the outside of the outer functions
+    // used in closures
+    // adds some data security e.g below you have to login first to get notifications and display usernames
+    let ume = "Lyons X"
+    let u_inbox = 0;
+    login()
+
+    function login() {
+        disUme()
+        disNotify()
+        function disUme() {
+            console.log(ume)
+        }
+        function disNotify() {
+            console.log(`you have ${u_inbox} notifications`)
+        }
+    }
+
+// Maps - object that holds key value pairs of any data type
+    const store = new Map([
+        ["t-shirt", 20],
+        ["tie", 10],
+        ["boxer", 50]
+    ])
+
+    let shopping = 0;
+    shopping += store.get("t-shirt") //get method
+    store.set("hat", 50) //set method
+    store.delete("tie") //delete method
+    console.log(store.has("hat")) //checks if it exists
+    console.log(store.size) //size of the map
+    
+
+    console.log(shopping)
+
+    store.forEach((value, key) => console.log(`${key} - ${value}`))
+
+// objects - a group of properties(what an object has e.g color) and methods(what an object can do)
+    const car = {
+        model: "mustang",
+        color:"red",
+        year:"2023",
+
+        drive : function () {
+            console.log(`${this.model}`) //  this - reference to a particular object
+        },
+
+        brake : function () {
+            console.log('stop')
+        }
+
+    }
+    console.log(car.model)
+    car.drive()
+
+// class - a blueprint for creating objects
+    class Player{
+        score = 0;
+
+        exit(){
+            console.log("exit")
+        }
+    }
+
+    player1 = new Player();
+    player1.score = 4;
+    player1.exit()
+
+// constructor - special method of a class, called when an object is instantiated
+    class Student{
+        constructor(name,age,grade){
+            this.name = name;
+            this.age = age;
+            this.grade = grade;
+        }
+        study(){
+            console.log("study");
+        }
+    }
+
+    student1 = new Student("qw", 23, 78);
+    console.log(student1)
+    student1.study()
+
+// Static - whether it is a property or a method it belongs to the class not objects(cant be accessed by objects)
+    // properties: useful for caches, fixed configurations
+    // methods: useful for utility functions
+    class Car{
+
+        static numberOfCars = 0; //static property
+
+        constructor(model){
+            this.model = model;
+            Car.numberOfCars ++;
+        }
+
+        static startRace(){
+            console.log("go")
+        }
+    }
+
+    console.log(Car.numberOfCars)
+    Car.startRace()
+
+// inheritance - child class inherits all the methods and properties from another class
+    class Animal{
+        alive = true;
+
+        eat(){
+            console.log("eat");
+        }
+    }
+    class Rabbit extends Animal{
+        name = "rabbit";
+        run(){
+            console.log("runs")
+        }
+    }
+    class Fish extends Animal{
+        name = "fish";
+        run(){
+            console.log("runs")
+        }
+    }
+    const rabbit = new Rabbit()
+    rabbit.eat()
+
+// super - refers to the parent class, commonly used to invoke the constructor of the parent class
+    class Animals{
+        constructor(name){
+            this.name = name;
+        }
+        alive = true;
+
+        eat(){
+            console.log("eat");
+        }
+    }
+    class Rabbits extends Animals{
+        constructor(name, age){
+            super(name);
+            this.age = age;
+        }
+        run(){
+            console.log("runs")
+        }
+    }
+    class Fishs extends Animals{
+        constructor(name, age){
+            super(name);
+            this.age = age;
+        }
+        run(){
+            console.log("runs")
+        }
+    }
+    const rabbits = new Rabbits('rabid', 20)
+    console.log(rabbits.name)
+
+// getters and setters
+    // get - binds an object property to a function when that property is accessed
+    // if u have getters and setters set its a common convention to add _ to the property name,
+    //  this lets other developers know it is a protected property and shouldn't be messed with, protected
+    // makes it readonly (to overwrite you must add the _)
+
+    // setters - bind an object property to a function then that property is assigned a value
+
+    class Carx{
+        constructor(power){
+            this._gas = 25;
+            this._power = power; //protected property
+        }
+
+        get power(){
+            return `${this._power}hp`;
+        }
+
+        get gas(){
+            return `${this._gas}L (${this._gas / 50 * 100}%)`;
+        }
+
+        set gas(value){
+            if (value > 50) {
+                value = 50;
+            }else if (value < 0) {
+                value = 0;
+            }
+            this._gas = value;
+        }
+    }
+    let carx = new Carx(400);
+    carx.gas = 100;
+    console.log(carx.power)
+    console.log(carx.gas)
+
+// objects as arguments 
+    class Studentz{
+        constructor(name,age,grade){
+            this.name = name;
+            this.age = age;
+            this.grade = grade;
+        }
+        study(){
+            console.log("study");
+        }
+    }
+
+    student12 = new Studentz("qw", 23, 78);
+    student2 = new Studentz("qw", 23, 78);
+    student3 = new Studentz("qw", 23, 78);
+    student4 = new Studentz("qw", 23, 78);
+    
+    function changeGrade(studentz, grade) {
+        studentz.grade = grade;
+        console.log(studentz.age)
+    }
+    changeGrade(student12, 98)
+    console.log(student12)
+
+// array of objects
+    const stds = [ student12, student2, student3, student4 ]
+    console.log(stds)
+    console.log(stds[3].grade)
+    function grades(stds) {
+        for (std of stds) {
+            console.log(std.grade)
+        }
+    }
+    grades(stds)
+
+// anonymous objects - without a name, we do not have direct access to these objects by name since they dont have a name but less syntax
+    class Card{
+        constructor(value, suit){
+            this.value = value;
+            this.suit = suit;
+        }
+    } 
+
+    let cards_ = [new Card("2", "Hearts"),new Card("4", "Spades"),new Card("5", "Hearts"),new Card("6", "Hearts"),new Card("A", "Hearts")]
+    cards_.forEach((element) => console.log(element))
