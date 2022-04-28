@@ -854,16 +854,73 @@ console.log('This is it')
     }
 
 // setTimeout() - invokes a function after a number of milliseconds - it is an asynchronous function(doesn't pause your program execution)
-    setTimeout(firstMessage, 3000)    
-    setTimeout(secondMessage, 6000)
-    setTimeout(thirdMessage, 9000)
+    // let timer1 = setTimeout(firstMessage, 3000)    
+    // let timer2 = setTimeout(secondMessage, 6000)
+    // let timer3 = setTimeout(thirdMessage, 9000)    
+    // function firstMessage() {
+    //     alert("Buy this course for $500")
+    // }
+    // function secondMessage() {
+    //     alert("This is not scam")
+    // }
+    // function thirdMessage() {
+    //     alert("DO IT!")
+    // }
+    // document.getElementById("myButton").onclick = function () {
+    //     clearTimeout(timer1)
+    //     clearTimeout(timer2)
+    //     clearTimeout(timer3)
+    // }
 
-    function firstMessage() {
-        alert("Buy this course for $500")
+// setInterval() - same as Timeout but repeatedly 
+    // let cnt = 0;
+    // let max_cnt = 4;
+    // const myTimer = setInterval(countUp, 1000, max_cnt)
+    // function countUp(max) {
+    //     cnt ++;
+    //     console.log(cnt);
+    //     if (cnt >= max) {
+    //         clearInterval(myTimer);
+    //     }
+    // }
+
+// Date objects
+    // let date = new Date(0);
+    // let date = new Date(); //now
+    // let date = new Date(2023, 0, 3, 3, 4, 4);
+    // let date = new Date("January 4 2023 01:11:34");
+   
+    // console.log(date.getFullYear())
+    // console.log(date.getDate())
+    // console.log(date.getDay())
+    // console.log(date.getMonth())
+    // console.log(date.getHours())
+    // console.log(date.getSeconds())
+    // console.log(date.getMilliseconds())
+
+    // date.setFullYear(2024)
+    // date.setMonth(5)
+    // date.setHours(16)
+
+    // date = date.toLocaleTimeString();
+    // date = date.toLocaleDateString();
+
+    let date = new Date();
+    document.getElementById("date").textContent = `${formatDate(date)} ${formatTime(date)}`;
+
+    function formatDate(date) {
+        let year = date.getFullYear();
+        let month = date.getMonth();
+        let day = date.getDay();
+
+        return `${day} / ${month} / ${year}`;
     }
-    function secondMessage() {
-        alert("This is not scam")
+    function formatTime(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let apm = hours >= 12? "pm": "am";
+
+        return ` ${hours}:${minutes}:${seconds} ${apm}`;
     }
-    function thirdMessage() {
-        alert("DO IT!")
-    }
+    console.log(date)
