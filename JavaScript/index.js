@@ -962,9 +962,77 @@ console.log('This is it')
 
 // console.time() => Starts a timer you can use to track how long an operation takes, give each timer a unique name.
     //start 
-    console.time("Response time"); 
+    // console.time("Response time"); 
  
-    alert("click okay button")
+    // alert("click okay button")
 
-    //end
-    console.timeEnd("Response time");
+    // //end
+    // console.timeEnd("Response time");
+
+//  promise = object that encapsulates the result of an asynchronous operation
+    // lets asynchronous methods return values like synchronous methods "I promise to return something in the future"
+    // promises have a state - pending then 'fulfilled or rejected', the result is what can be returned
+    // has 2 pats - producing && consuming
+    const promise = new Promise((resolve, reject) => {
+        let fileLoaded = false;
+        if (fileLoaded) {
+            resolve("file Loaded")
+        } else {
+            reject("file NOT loaded")
+        }
+    });  //producing
+    
+    // consuming - what to do if it is resolved
+    promise.then(value => console.log(value))
+        .catch(error => console.log(error));
+
+    const wait = time => new Promise(resolve => {
+        setTimeout(resolve, time)
+    })
+
+    wait(3000).then(() => console.log("Thank you for waiting")) 
+
+// async - keyword that makes a function return a promise
+    async function loadFile() {
+        let fileLoaded = false;
+        if (fileLoaded) {
+            return "file Loaded";
+        } else {
+            throw "file NOT loaded x";
+        }
+    }
+    loadFile().then(value => console.log(value))
+            .catch(error => console.log(error));
+
+            // another format
+                async function loadFile() {
+                    let fileLoaded = false;
+                    if (fileLoaded) {
+                        return Promise.resolve("file Loaded");
+                    } else {
+                        return Promise.reject("file NOT loaded x");
+                    }
+                }
+                loadFile().then(value => console.log(value))
+                        .catch(error => console.log(error));
+
+// await keyword - makes an async function wait for a promise
+    async function loadFilex() {
+        let fileLoaded = false;
+        if (fileLoaded) {
+            return "file Loaded here";
+        } else {
+            throw "file NOT loaded here";
+        }
+    }
+    async function startProcess() {
+        try {
+            let message = await loadFilex();
+            console.log(message)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    startProcess()
+    // loadFile().then(value => console.log(value))
+    //         .catch(error => console.log(error));
