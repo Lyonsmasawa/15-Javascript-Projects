@@ -921,6 +921,50 @@ console.log('This is it')
         let seconds = date.getSeconds();
         let apm = hours >= 12? "pm": "am";
 
+        hours = (hours % 12) || 12 // converts to standard hour system
+
         return ` ${hours}:${minutes}:${seconds} ${apm}`;
     }
     console.log(date)
+
+// clock
+    const myLabel = document.getElementById("clock");
+
+    update();
+    setInterval(update, 1000);
+
+    function update() {
+        let date = new Date();
+        myLabel.textContent = `${formatTime(date)}`;
+
+        function formatTime(date) {
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let apm = hours >= 12? "pm": "am";
+    
+            hours = (hours % 12) || 12 // converts to standard hour system
+            hours = formatZeros(hours)
+            minutes = formatZeros(minutes)
+            seconds = formatZeros(seconds)
+    
+            return ` ${hours}:${minutes}:${seconds} ${apm}`;
+        }
+
+        function formatZeros(time) {
+            time = time.toString();
+            return time.length < 2? "0" + time: time;
+        }
+    }
+
+// synchronous code - in an ordered sequence - step by step linear instructions(start now, finish now)
+// asynchronous code - out of sequence. e.g access a db, fetch a file, tasks that take some time(start now, finish sometime later)
+
+// console.time() => Starts a timer you can use to track how long an operation takes, give each timer a unique name.
+    //start 
+    console.time("Response time"); 
+ 
+    alert("click okay button")
+
+    //end
+    console.timeEnd("Response time");
