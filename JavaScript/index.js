@@ -831,3 +831,39 @@ console.log('This is it')
 
     let cards_ = [new Card("2", "Hearts"),new Card("4", "Spades"),new Card("5", "Hearts"),new Card("6", "Hearts"),new Card("A", "Hearts")]
     cards_.forEach((element) => console.log(element))
+
+// error handling - a way to gracefully handle an error(object with a description of something that went wrong)
+    // surround any dangerous code with a try catch block -you can add a finally-this always executes-
+    // - every user input is considered dangerous, lose of connection, cant open a file, TypeError
+
+       // throw - executes a user defined error
+    try {
+        let x = document.getElementById("myText").value;
+        x = Number(x);
+
+        if(isNaN(x)) throw "That wasnt a number";
+        if(x == "") throw "that was empty";
+
+        console.log(x)
+
+    } catch (error) {
+        console.log(error)
+    }
+    finally{
+        console.log('always runs')
+    }
+
+// setTimeout() - invokes a function after a number of milliseconds - it is an asynchronous function(doesn't pause your program execution)
+    setTimeout(firstMessage, 3000)    
+    setTimeout(secondMessage, 6000)
+    setTimeout(thirdMessage, 9000)
+
+    function firstMessage() {
+        alert("Buy this course for $500")
+    }
+    function secondMessage() {
+        alert("This is not scam")
+    }
+    function thirdMessage() {
+        alert("DO IT!")
+    }
