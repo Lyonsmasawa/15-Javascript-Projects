@@ -66,3 +66,21 @@
             children.forEach(child => {
                 child.style.backgroundColor = "blue";
             })
+
+// add or change html elements
+    // either use innerHtml(vulnerable to XSS attacks) or textContent(more secure) 
+    // let location_ = document.getElementById("two");
+    // location_.style.paddingLeft = "5px";
+    // let nameTag = document.createElement("h1");
+    // allows you to assign some tags along with text which means a malicious code(script) can be placed
+    // nameTag.innerHTML = window.prompt("enter name");
+    // but if you use a textContent it passes everything as a text including malicious code
+    // nameTag.textContent = ("Lyons")
+    // location_.append(nameTag);
+    let list_ = document.getElementById("addChange");
+    let l_item = document.createElement("li");
+    l_item.textContent = "mango";
+    // list_.prepend(l_item); // top
+    // list_.append(l_item) // bottom
+    // middle
+            list_.insertBefore(l_item, list_.getElementsByTagName("li")[2])

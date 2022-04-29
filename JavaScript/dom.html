@@ -7,54 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+    }
+</style>
 
 <body>
-    <div class="elementSelectors">
-        <p>Element selectors</p>
-        <!-- <div id="try">This</div> -->
-        <!-- getElementById -->
-        <h1 id="myTitle">This is the menu</h1>
+    <div class="one">
+        <div class="elementSelectors">
+            <p>Element selectors</p>
+            <!-- <div id="try">This</div> -->
+            <!-- getElementById -->
+            <h1 id="myTitle">This is the menu</h1>
 
-        <!-- getElementsByName -->
-        <input type="radio" name="fruits" value="Apple" checked="checked">
-        <label for="">Apple</label><br>
-        <input type="radio" name="fruits" value="Pineapple">
-        <label for="">pineapple</label><br>
-        <input type="radio" name="fruits" value="Mango">
-        <label for="">Mango</label><br>
+            <!-- getElementsByName -->
+            <input type="radio" name="fruits" value="Apple" checked="checked">
+            <label for="">Apple</label><br>
+            <input type="radio" name="fruits" value="Pineapple">
+            <label for="">pineapple</label><br>
+            <input type="radio" name="fruits" value="Mango">
+            <label for="">Mango</label><br>
 
-        <!-- getElementsByTag -->
-        <ul>
-            <li>carrots</li>
-            <li>potatoes</li>
-            <li>onions</li>
-        </ul>
-
-        <!-- getElementsByClassName -->
-        <div class="desserts">ice cream</div>
-        <div class="desserts">cake</div>
-        <div class="desserts">pie</div>
-    </div>
-    <hr>
-    <div class="dom-traversal">
-        <p>DOM traversal</p>
-        <div class="body">
-            <ul id="fruit">
-                <li>apple</li>
-                <li>pineapple</li>
-                <li>banana</li>
-            </ul>
-            <ul id="veg">
+            <!-- getElementsByTag -->
+            <ul>
                 <li>carrots</li>
                 <li>potatoes</li>
                 <li>onions</li>
             </ul>
-            <ul id="dessert">
-                <li>ice cream</li>
-                <li>cake</li>
-                <li>pie</li>
-            </ul>
+
+            <!-- getElementsByClassName -->
+            <div class="desserts">ice cream</div>
+            <div class="desserts">cake</div>
+            <div class="desserts">pie</div>
         </div>
+        <hr>
+        <div class="dom-traversal">
+            <p>DOM traversal</p>
+            <div class="body">
+                <ul id="fruit">
+                    <li>apple</li>
+                    <li>pineapple</li>
+                    <li>banana</li>
+                </ul>
+                <ul id="veg">
+                    <li>carrots</li>
+                    <li>potatoes</li>
+                    <li>onions</li>
+                </ul>
+                <ul id="dessert">
+                    <li>ice cream</li>
+                    <li>cake</li>
+                    <li>pie</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="two" id="two">
+        <ul id="addChange">
+            <li>apple</li>
+            <li>pineapple</li>
+            <li>banana</li>
+        </ul>
     </div>
 
     <script src="dom.js"></script>
