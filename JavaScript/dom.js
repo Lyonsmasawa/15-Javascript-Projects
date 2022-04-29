@@ -84,3 +84,12 @@
     // list_.append(l_item) // bottom
     // middle
             list_.insertBefore(l_item, list_.getElementsByTagName("li")[2])
+
+// change css properties
+    const t = document.getElementById("myT");
+    t.style.color = "rgb(50, 200, 250)";
+    t.style.fontFamily = "consolas";
+    t.style.textAlign = "center";
+    t.style.background = "#222222";
+    t.style.display = "block";
+    t.style.border = "2px solid"
