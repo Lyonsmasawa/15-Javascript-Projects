@@ -1037,3 +1037,24 @@ console.log('This is it')
     // loadFile().then(value => console.log(value))
     //         .catch(error => console.log(error));
 
+//  WINDOW OBJECT - interface used to talk to the web browser
+    // DOM is property of the window object
+    // console.dir(window);
+    // console.log(window.innerHeight)
+    // console.log(window.scrollY);
+    // window.location = "https://google.com"; // redirect
+    console.log(window.location.hostname)
+    console.log(window.location.pathname)
+
+    win = document.getElementById("win");
+    win.addEventListener("click", () => window.open("https://google.com")) //opens new window
+    // win.addEventListener("click", () => window.close()) -- closes this window
+    // win.addEventListener("click", () => window.print()) -- prints this window
+    // window.alert("disclaimer")
+    // window.confirm("press OK to continue")
+    let verifyAge = window.prompt("Enter Your Age");
+    if (verifyAge <= 18) {
+        window.alert("You must be 18 plus to enter this site!");
+        window.close();
+    }
+
