@@ -1052,9 +1052,9 @@ console.log('This is it')
     // win.addEventListener("click", () => window.print()) -- prints this window
     // window.alert("disclaimer")
     // window.confirm("press OK to continue")
-    let verifyAge = window.prompt("Enter Your Age");
-    if (verifyAge <= 18) {
-        window.alert("You must be 18 plus to enter this site!");
-        window.close();
-    }
+    // let verifyAge = window.prompt("Enter Your Age");
+    // if (verifyAge <= 18) {
+    //     window.alert("You must be 18 plus to enter this site!");
+    //     window.close();
+    // }
 
