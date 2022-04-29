@@ -92,4 +92,24 @@
     t.style.textAlign = "center";
     t.style.background = "#222222";
     t.style.display = "block";
-    t.style.border = "2px solid"
+    t.style.border = "2px solid";
+
+// events - some action a user or browser does
+    // let bn = document.getElementById("myButton");
+    const myText = document.getElementById("myText");
+    const myDiv = document.getElementById("myDiv");
+
+    // bn.onclick = doSomething();
+    // element.onload = doSomething();
+    // myText.onchange = doSomething();
+    // myDiv.onmouseover = doSomething(myDiv)
+    // myDiv.onmouseout = doSomethingElse()
+    // myDiv.onmousedown = doSomething()
+    // myDiv.onmouseup = doSomething()
+
+
+    // function doSomething(e) {
+    //     e.style.backgroundColor = "red";
+    // }
+
+// add event listener
