@@ -980,12 +980,12 @@ console.log('This is it')
         } else {
             reject("file NOT loaded")
         }
-    });  //producing
-    
+    });  //end of producing
     // consuming - what to do if it is resolved
     promise.then(value => console.log(value))
         .catch(error => console.log(error));
 
+    // another example
     const wait = time => new Promise(resolve => {
         setTimeout(resolve, time)
     })
@@ -1036,3 +1036,4 @@ console.log('This is it')
     startProcess()
     // loadFile().then(value => console.log(value))
     //         .catch(error => console.log(error));
+
