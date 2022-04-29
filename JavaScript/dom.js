@@ -36,8 +36,33 @@
     document.querySelector("[for]").style.backgroundColor = "red"; //select using attributes
 
     // querySelectorAll - selects all and places them in like an array
-    document.querySelectorAll("li").forEach(element => {
-        element.style.backgroundColor = "yellow";
-    })
+    // document.querySelectorAll("li").forEach(element => {
+    //     element.style.backgroundColor = "yellow";
+    // })
 
 // DOM traversal
+    let elements = document.querySelector(".body")
+    console.log(elements)
+        // .firstElementChild
+        elements.firstElementChild.style.backgroundColor = "green";
+
+        // .lastElementChild
+        elements.lastElementChild.style.backgroundColor = "orange";
+
+        // .parentElement
+        elements.parentElement.style.background = "black";
+        elements.parentElement.style.color = "white";
+
+        // sibling
+        document.getElementById("veg").nextElementSibling.style.background = "red";
+        document.getElementById("veg").previousElementSibling.style.background = "orange";
+
+        // children
+        document.getElementById("veg").lastElementChild.style.background = "red";
+        document.getElementById("veg").firstElementChild.style.background = "red";
+        document.getElementById("veg").children[1].style.background = "black";
+            //all children
+            let children = Array.from(elements.children); //returns a collection of all the children then we can change it to array to use for each
+            children.forEach(child => {
+                child.style.backgroundColor = "blue";
+            })
