@@ -134,5 +134,29 @@
     function changeBlue(){
         this.style.background = "blue";
     }
+// 
 
 // show and hide html element
+    mtn = document.getElementById("mtn");
+    myImg = document.getElementById("myImg");
+    console.log(myImg)
+
+    mtn.addEventListener("click", () => {
+        if (myImg.style.display == "none") {
+            myImg.style.display = "block";
+        } else {
+            myImg.style.display = "none";
+        }
+    })
+    // using visibility
+    mtn2 = document.getElementById("mtn2");
+    myImg2 = document.getElementById("myImg2");
+    console.log(myImg)
+
+    mtn2.addEventListener("click", () => {
+        if (myImg2.style.visibility == "hidden") {
+            myImg2.style.visibility = "visible";
+        } else {
+            myImg2.style.visibility = "hidden";
+        }
+    })

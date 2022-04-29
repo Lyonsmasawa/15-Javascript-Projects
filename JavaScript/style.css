@@ -19,4 +19,9 @@
  }
  #myImg{
      width: 300px;
+     /* display: none; */
  }
+ #myImg2{
+    width: 300px;
+    /* display: none; */
+}
