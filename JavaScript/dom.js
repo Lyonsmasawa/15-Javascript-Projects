@@ -171,11 +171,24 @@
     let y = 0;
 
     function move_(event) {
+        console.log(event)
         switch (event.key) {
             case "ArrowDown":
-                
+                y+=5;
+                move.style.top = y + "px";
                 break;
-        
+            case "ArrowUp":
+                y-=5;
+                move.style.top = y + "px";
+                break;
+            case "ArrowRight":
+                x+=5;
+                move.style.left = x + "px";
+                break;
+            case "ArrowLeft":
+                x-=5;
+                move.style.right = x + "px";
+                break;
             default:
                 break;
         }        
