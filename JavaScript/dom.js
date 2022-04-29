@@ -113,7 +113,10 @@
     // }
 
 // addEventListener(event, function, useCapture) - can add as many events or same events that invokes one function
+    // useCapture - what happens when parent and child are waiting for the same(which will be handled first)
     const innerDiv = document.getElementById("innerDiv");
+    const outerDiv = document.getElementById("outerDiv");      
+
     innerDiv.addEventListener("mouseover", changeColor);
     innerDiv.addEventListener("mouseout", revertColor);
 
@@ -124,3 +127,12 @@
     function revertColor(){
         innerDiv.style.background = "lightgreen";
     }
+    
+    // useCapture - handles true first
+    innerDiv.addEventListener("click", changeBlue)
+    outerDiv.addEventListener("click", changeBlue, true)
+    function changeBlue(){
+        this.style.background = "blue";
+    }
+
+// show and hide html element
