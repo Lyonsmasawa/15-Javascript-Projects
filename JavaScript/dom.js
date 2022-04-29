@@ -160,3 +160,23 @@
             myImg2.style.visibility = "hidden";
         }
     })
+
+// detect key presses
+    // window.addEventListener("keydown", event => {
+    //     console.log(event)
+    // })
+    const move = document.getElementById("move");
+    window.addEventListener("keydown", move_)
+    let x = 0;
+    let y = 0;
+
+    function move_(event) {
+        switch (event.key) {
+            case "ArrowDown":
+                
+                break;
+        
+            default:
+                break;
+        }        
+    }
