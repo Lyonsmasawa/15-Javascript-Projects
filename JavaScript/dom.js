@@ -112,4 +112,15 @@
     //     e.style.backgroundColor = "red";
     // }
 
-// add event listener
+// addEventListener(event, function, useCapture) - can add as many events or same events that invokes one function
+    const innerDiv = document.getElementById("innerDiv");
+    innerDiv.addEventListener("mouseover", changeColor);
+    innerDiv.addEventListener("mouseout", revertColor);
+
+    function changeColor(){
+        innerDiv.style.background = "red";
+    }
+
+    function revertColor(){
+        innerDiv.style.background = "lightgreen";
+    }
