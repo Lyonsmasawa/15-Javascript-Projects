@@ -1057,4 +1057,4 @@ console.log('This is it')
     //     window.alert("You must be 18 plus to enter this site!");
     //     window.close();
     // }
-
+ 
